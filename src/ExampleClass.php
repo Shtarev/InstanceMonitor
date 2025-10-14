@@ -6,7 +6,7 @@ class ExampleClass
 {
     public $testVar = 'Das ist Test';
     
-    public function TestFunction()
+    public function testFunction()
     {
         return $this->testVar;
     }
