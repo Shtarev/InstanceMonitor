@@ -1,6 +1,6 @@
 <?php
 
-namespace Shtarev\TestExample;
+namespace Shtarev\PaketExample;
 
 class ExampleClass
 {
