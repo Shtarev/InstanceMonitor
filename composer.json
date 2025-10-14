@@ -1,0 +1,21 @@
+{
+    "name": "shtarev/testExample",
+    "description": "Das ist Example",
+    "type": "vcs",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Shtarev\\TestExample\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AndreyS",
+            "email": "shtarev@quellwerke.de",
+            "homepage": "https://www.quellwerke.de/",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
