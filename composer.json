@@ -1,5 +1,6 @@
 {
     "name": "shtarev/paketexample",
+    "version": 1.0.0,
     "description": "Das ist Example",
     "type": "vcs",
     "license": "MIT",
