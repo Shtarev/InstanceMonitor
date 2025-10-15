@@ -2,31 +2,68 @@
 
 namespace Shtarev\PaketExample;
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Pimcore\Version;
+use Doctrine\DBAL\Connection;
 
-class ExampleClass
+class ExampleClass extends Connection
 {
     private $id = '';
-    private $baseUrl = '';
+    private $baseUri = '';
     private $installationName = '';
     private $installationType = '';
     private $installationVersion = '';
     private $phpVersion = '';
     private $lastCheck = '';
-    private $sites = '';
-    private $additionalInformations = '';
-    
-    public function testFunction(SerializerInterface $serializer)
+    private $sites = ["test.de","hallo.com"];
+    private $additionalInformations = [];
+
+    private $connection;
+
+
+
+    public function __construct()
     {
+       
+    }
+
+    public function testFunction(): JsonResponse
+    {
+
+        //dd($this->getDomains());
+
         $data = [
-            'name' => 'Test',
-            'version' => '1.0.0',
+            'id' => 'Test',
+            'baseUrl' => $this->baseUrl(),
+            'installationName' => $this->baseUrl(),
+            'installationType' => '',
+            'installationVersion' => Version::getVersion(),
+            'phpVersion' => phpversion(),
+            'lastCheck' => '',
+            // 'sites' => $this->sites,
+            //'sites' => $this->sites,
+            'additionalInformations' => [],
         ];
 
-        $json = $serializer->serialize($data, 'json');
-
-        return new Response($json, 200, ['Content-Type' => 'application/json']);
+        return new JsonResponse($data);
     }
+    private function baseUrl()
+    {
+        $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+        $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+        $baseUrl = $scheme . '://' . $host;
+
+        return $baseUrl;
+    }
+
+    public function getDomains(): array
+    {
+        $sql = 'SELECT domain FROM sites'; // или просто `sites`, уточни в БД
+        $domains = $this->fetchFirstColumn($sql);
+        
+        return $domains;
+    }
+
+
+
 }
