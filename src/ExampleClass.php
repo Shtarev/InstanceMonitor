@@ -8,28 +8,23 @@ use Pimcore\Model\Site;
 
 class ExampleClass
 {    
-    public function __construct()
-    {
-       //parent::__construct();
-    }
-
-    public function testFunction(): JsonResponse
+    public static function testFunction(): JsonResponse
     {
         $data = [
             'id' => 'Test',
-            'baseUrl' => $this->baseUrl(),
-            'installationName' => $this->baseUrl(),
+            'baseUrl' => self::baseUrl(),
+            'installationName' => self::baseUrl(),
             'installationType' => '',
             'installationVersion' => Version::getVersion(),
             'phpVersion' => phpversion(),
             'lastCheck' => '',
-            'sites' => $this->getAllDomains(),
+            'sites' => self::getAllDomains(),
             'additionalInformations' => [],
         ];
 
         return new JsonResponse($data);
     }
-    private function baseUrl()
+    private static function baseUrl()
     {
 
         $site = Site::getCurrentSite();
@@ -42,7 +37,7 @@ class ExampleClass
         return $baseUrl;
     }
 
-    public function getAllDomains(): array
+    public static function getAllDomains(): array
     {
         $sites = new Site\Listing();
         $domains = [];
