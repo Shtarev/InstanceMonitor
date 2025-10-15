@@ -7,7 +7,8 @@ use Pimcore\Version;
 use Pimcore\Model\Site;
 
 class ExampleClass
-{    public function __construct()
+{    
+    public function __construct()
     {
        //parent::__construct();
     }
