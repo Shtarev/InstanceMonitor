@@ -7,7 +7,7 @@ use Pimcore\Version;
 use Pimcore\Model\Site;
 use Carbon\Carbon;
 
-class InstanceMonitor
+class InstanceMonitorPimcore
 {    
     public static function execute(): JsonResponse
     {
