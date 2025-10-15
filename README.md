@@ -1,4 +1,4 @@
-# InstanceMonitor: Bundle für Pimcore
+# InstanceMonitor: Bundle for Pimcore
 ---
 1. **composer config repositories.instancemonitor vcs https://github.com/Shtarev/InstanceMonitor**
 2. **composer require shtarev/instancemonitor:dev-main**
