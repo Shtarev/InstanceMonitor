@@ -1,15 +1,15 @@
 <?php
 
-namespace Shtarev\PaketExample;
+namespace Shtarev\InstanceMonitor;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Pimcore\Version;
 use Pimcore\Model\Site;
 use Carbon\Carbon;
 
-class ExampleClass
+class InstanceMonitorPimcore
 {    
-    public static function testFunction(): JsonResponse
+    public static function execute(): JsonResponse
     {
         $data = [
             'id' => base64_encode(self::baseUrl()),
@@ -27,14 +27,8 @@ class ExampleClass
     }
     private static function baseUrl()
     {
-
         $site = Site::getCurrentSite();
         $baseUrl = $site ? $site->getMainDomain() : null;
-
-        // $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-        // $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
-        // $baseUrl = $scheme . '://' . $host;
-
         return $baseUrl;
     }
 
