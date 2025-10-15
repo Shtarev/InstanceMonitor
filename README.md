@@ -10,7 +10,7 @@ namespace App\Controller;
 
 use App\Controller\FrontendController;
 use Symfony\Component\Routing\Annotation\Route;
-use Shtarev\InstanceMonitor\InstanceMonitor;
+use Shtarev\InstanceMonitor\InstanceMonitorPimcore;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 
