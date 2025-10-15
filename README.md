@@ -1,7 +1,7 @@
 # InstanceMonitor: Bundle for Pimcore
 ---
 1. **composer config repositories.instancemonitor vcs https://github.com/Shtarev/InstanceMonitor**
-2. **composer require shtarev/instancemonitor:dev-master** or **composer require shtarev/instancemonitor:dev-main** - depending on the main branch
+2. **composer require shtarev/instancemonitor:dev-main** or **composer require shtarev/instancemonitor:dev-master** - depending on the main branch(here is main)
 3. **composer update**
 
 ## In Controller:
