@@ -5,7 +5,7 @@
 3. **composer update**
 
 ## In Controller:
-<pre> ```
+<pre>
 namespace App\Controller;
 
 use App\Controller\FrontendController;
@@ -24,4 +24,4 @@ class TestController extends FrontendController
         return ExampleClass::testFunction();
     }
 }
- ``` </pre>
+</pre>
