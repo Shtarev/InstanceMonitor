@@ -1,11 +1,11 @@
 {
-    "name": "shtarev/paketexample",
+    "name": "shtarev/Instancemonitor",
     "description": "Das ist Example",
     "type": "vcs",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Shtarev\\PaketExample\\": "src/"
+            "Shtarev\\InstanceMonitor\\": "src/"
         }
     },
     "authors": [
