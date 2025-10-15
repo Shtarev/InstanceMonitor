@@ -5,19 +5,20 @@ namespace Shtarev\PaketExample;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Pimcore\Version;
 use Pimcore\Model\Site;
+use Carbon\Carbon;
 
 class ExampleClass
 {    
     public static function testFunction(): JsonResponse
     {
         $data = [
-            'id' => 'Test',
+            'id' => base64_encode(self::baseUrl()),
             'baseUrl' => self::baseUrl(),
             'installationName' => self::baseUrl(),
-            'installationType' => '',
+            'installationType' => 'Pimcore',
             'installationVersion' => Version::getVersion(),
             'phpVersion' => phpversion(),
-            'lastCheck' => '',
+            'lastCheck' =>  Carbon::now(),
             'sites' => self::getAllDomains(),
             'additionalInformations' => [],
         ];
