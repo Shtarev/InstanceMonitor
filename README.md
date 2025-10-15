@@ -21,7 +21,7 @@ class TestController extends FrontendController
      */
     public function test(): JsonResponse
     {
-        return InstanceMonitor::execute();
+        return InstanceMonitorPimcore::execute();
     }
 }
 </pre>
