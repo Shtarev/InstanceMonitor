@@ -10,7 +10,7 @@ namespace App\Controller;
 
 use App\Controller\FrontendController;
 use Symfony\Component\Routing\Annotation\Route;
-use Shtarev\InstanceMonitor\InstanceMonitorPimcore;
+use Shtarev\InstanceMonitor\InstanceMonitor;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 
@@ -21,7 +21,7 @@ class TestController extends FrontendController
      */
     public function test(): JsonResponse
     {
-        return ExampleClass::testFunction();
+        return InstanceMonitor::execute();
     }
 }
 </pre>
